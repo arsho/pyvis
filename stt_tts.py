@@ -1,5 +1,6 @@
 import os
 import speech_recognition as sr
+from time import ctime
 
 com_sign = "Bot >> " 
 
