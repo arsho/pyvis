@@ -1,0 +1,6 @@
+arsho@arsho:/media/arsho/Documents/PyPrac/speech$ virtualenv -p python3 venv
+arsho@arsho:/media/arsho/Documents/PyPrac/speech$ source venv/bin/activate
+(venv)arsho@arsho:/media/arsho/Documents/PyPrac/speech$ pip install SpeechRecognition
+(venv)arsho@arsho:/media/arsho/Documents/PyPrac/speech$ pip install pyaudio
+(venv)arsho@arsho:/media/arsho/Documents/PyPrac/speech$ sudo apt-get install espeak
+(venv)arsho@arsho:/media/arsho/Documents/PyPrac/speech$ python -m idlelib.idle
