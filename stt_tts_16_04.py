@@ -1,4 +1,5 @@
 import os
+import subprocess
 import speech_recognition as sr
 from time import ctime
 import webbrowser
@@ -52,6 +53,11 @@ def show_me_website(line):
     url = "http://"+website_name
     webbrowser.open(url)
     return bot_answer
+
+def show_me_lock(line):
+    line_ar = line.split(" ")
+    bot_answer = subprocess.call(["gnome-screensaver-command", "-l"])
+    return str(bot_answer)
     
 word_map = {
     "hi":["Hi! How are you?","Hello there!"],        
@@ -61,6 +67,9 @@ word_map = {
     "how are you":["I am fine. Thank you for asking.","Not bad!"],
     "who are you?":["I am Pyvis. I am here to assist you.","I am your digital assistant, Pyvis"],
     "love me":["I love everyone.","I love coding"],
+    "love you":["hahahahahaha","Mention not"],
+    "favorite color":["Though I am in console, my favourite color is, Black"],
+    "thank you":["You are welcome.","My pleasure!","Mention not"],
     "shut up":["Okay, Boss!","See you soon!"],
     "fuck":["Be gentle please.","I thought you are better than this!","Dont be rediculous."],
     "bitch":["Be gentle please.","I thought you are better than this!","Dont be rediculous."],
@@ -104,6 +113,11 @@ while True:
             speak(bot_answer)        
         if "open" in user_message_str:
             bot_answer = show_me_website(user_message_str)
+            print(com_sign+bot_answer)
+            #os.system("espeak '"+bot_answer+"'")
+            speak(bot_answer)
+        if "lock" in user_message_str:
+            bot_answer = show_me_lock(user_message_str)
             print(com_sign+bot_answer)
             #os.system("espeak '"+bot_answer+"'")
             speak(bot_answer)
