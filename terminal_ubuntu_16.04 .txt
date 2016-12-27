@@ -3,8 +3,11 @@ $ source venv/bin/activate
 (venv)$ sudo apt-get install libasound-dev
 (venv)$ sudo apt-get install portaudio19-dev
 (venv)$ sudo apt-get install espeak
+(venv)$ sudo apt-get install mpg321
 (venv)$ pip install SpeechRecognition
 (venv)$ pip install pyaudio
+(venv)$ pip install talkey
+(venv)$ pip install gTTS
 (venv)$ python -m idlelib.idle
 
 
