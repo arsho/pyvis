@@ -5,6 +5,7 @@ import webbrowser
 import json
 from random import randint
 import urllib
+import string
 
 def tell_a_joke():    
     sub = "jokes"
@@ -29,6 +30,7 @@ r = sr.Recognizer()
 while True:
     current_time = str(ctime())
     #os_version = os.system("lsb_release -a | grep Description")
+    alpha = string.ascii_letters[::-1]
     word_map = {
         "hi":"Hi! How are you?",        
         "hello":"Hi! How are you?",        
@@ -38,6 +40,7 @@ while True:
         "who are you?":"I am Pyvis. I am here to assist you.",
         "love me":"I love everyone.",
         #"operating system":str(os_version),
+        "alphabets in reverse":alpha,
         "time":current_time,
         "joke":tell_a_joke(),
         "shut up":"Okay, Boss!"
