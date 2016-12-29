@@ -8,6 +8,7 @@ from random import randint
 import urllib
 from gtts import gTTS
 import random
+import wikipedia
 
 com_sign = "Bot >> " 
 man_sign = "You >> " 
@@ -84,6 +85,13 @@ def tell_me_country(line):
     except:
         return_str = "Sorry, could not find any information on this."
     return return_str
+
+def tell_me_wiki(line):
+    line_ar = line.split(" ")
+    pername = str(line_ar[-1])
+    sr_engine = wikipedia.search(pername)
+    bot_answer = wikipedia.summary(pername,sentences=4)
+    return bot_answer 
                 
 def show_me_map(line):
     line_ar = line.split(" ")
@@ -157,7 +165,12 @@ while True:
             bot_answer = tell_me_joke()
             print(com_sign+bot_answer)
             #os.system("espeak '"+bot_answer+"'")
-            speak(bot_answer)        
+            speak(bot_answer)   
+        if "anything" in user_message_str:
+            bot_answer = tell_me_wiki(user_message_str)
+            print(com_sign+bot_answer)
+            #os.system("espeak '"+bot_answer+"'")
+            speak(bot_answer)  
         if "open" in user_message_str:
             bot_answer = show_me_website(user_message_str)
             print(com_sign+bot_answer)
