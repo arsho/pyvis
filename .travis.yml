@@ -1,0 +1,10 @@
+language: python
+python:
+  - TOXENV=py34
+  - TOXENV=py36
+install:
+  - pip install tox
+  - pip install SpeechRecognition
+cache: pip
+script:
+  - tox  
